@@ -9,16 +9,16 @@ export class Users extends BaseEntity {
     firstName: string;
     @Column({unique: false, type: 'varchar', nullable: true})
     lastName: string;
-    @Column({unique: false, type: 'number', nullable: false})
-    document: number;
-    @Column({unique: false, type: 'varchar', nullable: false})
+    @Column({unique: true, type: 'number', nullable: false})
+    document: string;
+    @Column({unique: true, type: 'varchar', nullable: false})
     @IsEmail()
     email: string;
     @Column({unique: false, type: 'varchar', nullable: true})
     password: string;
     @Column({unique: false, type: 'varchar', nullable:false})
     type: string;
-    @Column({unique: false, type: 'decimal', nullable: false, default: 0})
+    @Column({unique: false, type: 'decimal', nullable: true, default: 0})
     balance: number
 
 }
